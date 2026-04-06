@@ -3,33 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why EH Payroll Saves You Money — NDIS Provider Webinar</title>
+<title>From Risk to Return: Why Generic Payroll Is Costing Care Providers More Than They Think</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
 
   :root {
-    --purple:#7C3AED;--purple-l:#A78BFA;--purple-d:#1E0B3E;--purple-m:#4C1D95;
-    --teal:#0891B2;--teal-l:#22D3EE;
+    /* ── EH brand ── */
+    --purple:#A569FF;--purple-l:#C4A4FF;--purple-d:#2D0649;--purple-m:#5B21B6;
+    --eh-neon:#BAFC58;
+    /* ── SC brand ── */
+    --sc-navy:#242F65;--sc-periwinkle:#D5DFF5;--sc-blue:#5175D1;--sc-coral:#F25056;
+    /* ── Shared neutrals ── */
+    --teal:#5175D1;--teal-l:#8DA5E8;
     --green:#059669;--green-l:#34D399;
     --red:#DC2626;--red-l:#FCA5A5;
     --gold:#D97706;--gold-l:#FCD34D;
-    --navy:#1E3A5F;
-    --bg:#F8F7FF;--surface:#FFFFFF;--s2:#F1F0FA;--s3:#E5E3F5;
-    --border:rgba(124,58,237,0.1);--border-soft:rgba(0,0,0,0.07);
-    --text:#110D1F;--muted:rgba(17,13,31,0.5);
-    --shadow:0 2px 24px rgba(124,58,237,0.08);
-    --shadow-lg:0 8px 40px rgba(124,58,237,0.14);
+    --navy:#242F65;
+    --bg:#F5F5F7;--surface:#FFFFFF;--s2:#EEF1FA;--s3:#D5DFF5;
+    --border:rgba(36,47,101,0.12);--border-soft:rgba(0,0,0,0.07);
+    --text:#1C1C1E;--muted:rgba(28,28,30,0.5);
+    --shadow:0 2px 24px rgba(36,47,101,0.08);
+    --shadow-lg:0 8px 40px rgba(36,47,101,0.14);
     --r:16px;--r-sm:10px;
   }
   .dark {
-    --purple:#A78BFA;--purple-l:#C4B5FD;--purple-d:#0D0718;--purple-m:#2E1065;
-    --teal:#22D3EE;--teal-l:#67E8F9;
+    --purple:#A569FF;--purple-l:#C4A4FF;--purple-d:#1A0430;--purple-m:#5B21B6;
+    --eh-neon:#BAFC58;
+    --sc-navy:#1A2250;--sc-periwinkle:#2D3B7A;--sc-blue:#5175D1;--sc-coral:#F25056;
+    --teal:#5175D1;--teal-l:#8DA5E8;
     --green:#34D399;--green-l:#6EE7B7;
     --red:#F87171;--red-l:#FECACA;
     --gold:#FCD34D;--gold-l:#FDE68A;
-    --bg:#0A0714;--surface:#110D1F;--s2:#180F2E;--s3:#1E1538;
-    --border:rgba(167,139,250,0.12);--border-soft:rgba(255,255,255,0.07);
-    --text:#F5F3FF;--muted:rgba(245,243,255,0.45);
+    --bg:#0E1020;--surface:#161B35;--s2:#1C2340;--s3:#242F65;
+    --border:rgba(165,105,255,0.15);--border-soft:rgba(255,255,255,0.07);
+    --text:#F0F2FF;--muted:rgba(240,242,255,0.45);
     --shadow:0 2px 24px rgba(0,0,0,0.4);
     --shadow-lg:0 8px 40px rgba(0,0,0,0.5);
   }
@@ -57,7 +64,7 @@
 
   /* PROGRESS */
   .progress-bar{height:3px;background:var(--s3);flex-shrink:0;position:relative;z-index:10;}
-  .progress-fill{height:100%;background:linear-gradient(90deg,var(--purple),var(--purple-l));transition:width 0.35s cubic-bezier(0.4,0,0.2,1);border-radius:2px;}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--purple),var(--sc-blue));transition:width 0.35s cubic-bezier(0.4,0,0.2,1);border-radius:2px;}
 
   /* TAB BAR */
   .tab-bar {
@@ -67,11 +74,16 @@
     display:flex;align-items:stretch;
     overflow-x:auto;scrollbar-width:none;
     flex-shrink:0;height:50px;
-    box-shadow:0 1px 0 var(--border),0 4px 20px rgba(124,58,237,0.04);
+    box-shadow:0 1px 0 var(--border),0 4px 20px rgba(36,47,101,0.04);
   }
   .tab-bar::-webkit-scrollbar{display:none;}
-  .tab-logo{display:flex;align-items:center;padding:0 20px;border-right:1px solid var(--border);flex-shrink:0;}
+  .tab-logo{display:flex;align-items:center;padding:0 16px;border-right:1px solid var(--border);flex-shrink:0;gap:0;}
   .tab-logo svg{height:20px;width:auto;}
+  /* Co-brand separator */
+  .tab-logo-sep{font-size:11px;font-weight:400;color:#999;padding:0 8px;flex-shrink:0;line-height:1;}
+  /* ShiftCare wordmark text */
+  .tab-logo-sc{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;color:var(--sc-navy);letter-spacing:-0.02em;flex-shrink:0;}
+  .dark .tab-logo-sc{color:#FFFFFF;}
   .tab {
     padding:0 14px;height:50px;
     display:flex;align-items:center;gap:6px;
@@ -135,7 +147,7 @@
     color:var(--purple);margin-bottom:5px;
     display:flex;align-items:center;gap:10px;
   }
-  .eyebrow::before{content:'';width:22px;height:2px;background:linear-gradient(90deg,var(--purple),var(--purple-l));border-radius:2px;}
+  .eyebrow::before{content:'';width:22px;height:2px;background:linear-gradient(90deg,var(--purple),var(--sc-blue));border-radius:2px;}
 
   .h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(19px,2.4vw,30px);font-weight:800;line-height:1.13;margin-bottom:5px;}
   .h1 span{color:var(--purple);}
@@ -163,12 +175,12 @@
     display:inline-flex;align-items:center;gap:5px;
     font-size:9.5px;font-weight:600;letter-spacing:0.04em;
     padding:3px 9px;border-radius:100px;
-    background:rgba(124,58,237,0.08);color:var(--purple);
-    border:1px solid rgba(124,58,237,0.2);
+    background:rgba(165,105,255,0.08);color:var(--purple);
+    border:1px solid rgba(165,105,255,0.2);
     text-decoration:none;transition:all 0.15s;
     margin-top:6px;white-space:nowrap;
   }
-  .news-chip:hover{background:rgba(124,58,237,0.15);border-color:var(--purple);}
+  .news-chip:hover{background:rgba(165,105,255,0.15);border-color:var(--purple);}
   .news-chip.red{background:rgba(220,38,38,0.08);color:var(--red);border-color:rgba(220,38,38,0.2);}
   .news-chip.red:hover{background:rgba(220,38,38,0.15);}
   .news-chip.gold{background:rgba(217,119,6,0.08);color:var(--gold);border-color:rgba(217,119,6,0.2);}
@@ -187,10 +199,10 @@
 
   /* TAGS */
   .tag{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:5px;margin-bottom:6px;display:inline-block;}
-  .tp{background:rgba(124,58,237,0.1);color:var(--purple);}
+  .tp{background:rgba(165,105,255,0.1);color:var(--purple);}
   .tr{background:rgba(220,38,38,0.1);color:var(--red);}
   .tg{background:rgba(5,150,105,0.1);color:var(--green);}
-  .tt{background:rgba(8,145,178,0.1);color:var(--teal);}
+  .tt{background:rgba(81,117,209,0.1);color:var(--teal);}
   .tgold{background:rgba(217,119,6,0.1);color:var(--gold);}
 
   /* BODY TEXT */
@@ -199,9 +211,9 @@
 
   /* ICON CONTAINERS */
   .ic{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
-  .icp{background:rgba(124,58,237,0.1);}
+  .icp{background:rgba(165,105,255,0.1);}
   .icr{background:rgba(220,38,38,0.1);}
-  .ict{background:rgba(8,145,178,0.1);}
+  .ict{background:rgba(81,117,209,0.1);}
   .icg{background:rgba(5,150,105,0.1);}
   .icgold{background:rgba(217,119,6,0.1);}
 
@@ -225,9 +237,9 @@
   #s1::before {
     content:'';position:absolute;inset:0;pointer-events:none;
     background:
-      radial-gradient(ellipse 70% 60% at 50% 35%,rgba(167,139,250,0.22) 0%,transparent 70%),
-      radial-gradient(ellipse 40% 35% at 85% 80%,rgba(8,145,178,0.12) 0%,transparent 60%),
-      radial-gradient(ellipse 30% 25% at 10% 80%,rgba(34,211,238,0.07) 0%,transparent 50%);
+      radial-gradient(ellipse 70% 60% at 50% 35%,rgba(165,105,255,0.25) 0%,transparent 70%),
+      radial-gradient(ellipse 40% 35% at 85% 80%,rgba(81,117,209,0.15) 0%,transparent 60%),
+      radial-gradient(ellipse 30% 25% at 10% 80%,rgba(36,47,101,0.2) 0%,transparent 50%);
   }
   /* Decorative grid lines */
   #s1::after {
@@ -247,7 +259,7 @@
     color:rgba(255,255,255,0.7);margin-bottom:22px;
   }
   #s1 h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:800;line-height:1.08;margin-bottom:16px;color:white;}
-  #s1 h1 span{color:var(--purple-l);}
+  #s1 h1 span{color:var(--eh-neon);}
   #s1 .st{font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:32px;line-height:1.6;}
   #s1 .badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:22px;}
   #s1 .badge{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:8px 14px;font-size:11px;font-weight:500;color:rgba(255,255,255,0.65);}
@@ -264,7 +276,7 @@
   }
   .ag-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
   .a1::before{background:linear-gradient(90deg,var(--purple),var(--purple-l));}
-  .a2::before{background:linear-gradient(90deg,var(--teal),var(--teal-l));}
+  .a2::before{background:linear-gradient(90deg,var(--sc-blue),var(--sc-periwinkle));}
   .a3::before{background:linear-gradient(90deg,var(--red),#FB7185);}
   .a4::before{background:linear-gradient(90deg,var(--gold),var(--gold-l));}
   .a5::before{background:linear-gradient(90deg,var(--green),var(--green-l));}
@@ -273,8 +285,8 @@
   .ag-d{font-size:11px;color:var(--muted);line-height:1.5;flex:1;}
   .ag-bonus {
     margin-top:12px;
-    background:linear-gradient(135deg,rgba(124,58,237,0.06),rgba(8,145,178,0.04));
-    border:1px solid rgba(124,58,237,0.15);
+    background:linear-gradient(135deg,rgba(165,105,255,0.06),rgba(81,117,209,0.04));
+    border:1px solid rgba(165,105,255,0.15);
     border-radius:10px;padding:11px 16px;
     font-size:12px;color:var(--text);text-align:center;font-weight:500;
   }
@@ -295,7 +307,7 @@
   .lc-badge{margin-top:12px;padding:8px 12px;border-radius:8px;font-size:11px;font-weight:600;}
   .lc-red{background:rgba(220,38,38,0.07);color:var(--red);}
   .lc-gold{background:rgba(217,119,6,0.07);color:var(--gold);}
-  .lc-purple{background:rgba(124,58,237,0.07);color:var(--purple);}
+  .lc-purple{background:rgba(165,105,255,0.07);color:var(--purple);}
 
   /* ──── SLIDE 5 VS ──── */
   .vs-row{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;flex:1;}
@@ -305,7 +317,7 @@
 
   /* ──── SLIDE 6 ROI ──── */
   input[type=range]{-webkit-appearance:none;width:100%;height:5px;border-radius:5px;outline:none;cursor:pointer;background:var(--s3);}
-  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--purple);box-shadow:0 0 10px rgba(124,58,237,0.4);cursor:pointer;border:2px solid var(--surface);transition:transform 0.1s;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--purple);box-shadow:0 0 10px rgba(165,105,255,0.4);cursor:pointer;border:2px solid var(--surface);transition:transform 0.1s;}
   input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.25);}
   .iv{font-size:11.5px;font-weight:700;color:var(--text);background:var(--s2);padding:2px 10px;border-radius:6px;}
 
@@ -325,8 +337,8 @@
   #s16::before {
     content:'';position:absolute;inset:0;pointer-events:none;
     background:
-      radial-gradient(ellipse 65% 55% at 50% 50%,rgba(167,139,250,0.2) 0%,transparent 70%),
-      radial-gradient(ellipse 35% 30% at 15% 80%,rgba(8,145,178,0.1) 0%,transparent 50%);
+      radial-gradient(ellipse 65% 55% at 50% 50%,rgba(165,105,255,0.22) 0%,transparent 70%),
+      radial-gradient(ellipse 35% 30% at 15% 80%,rgba(81,117,209,0.15) 0%,transparent 50%);
   }
   #s16::after {
     content:'';position:absolute;inset:0;pointer-events:none;
@@ -347,15 +359,15 @@
   .dlv-i{font-size:22px;}
   .cta {
     display:inline-flex;align-items:center;gap:8px;
-    background:linear-gradient(135deg,var(--purple),#6D28D9);
-    color:white;border-radius:100px;
+    background:var(--eh-neon);
+    color:#1C1C1E;border-radius:100px;
     padding:12px 30px;font-size:13px;font-weight:700;
     cursor:pointer;border:none;
     font-family:'DM Sans',sans-serif;
-    box-shadow:0 4px 24px rgba(124,58,237,0.45);
+    box-shadow:0 4px 24px rgba(186,252,88,0.35);
     transition:all 0.2s;
   }
-  .cta:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,58,237,0.55);}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(186,252,88,0.45);}
 
   /* TABLE */
   .ct{width:100%;border-collapse:collapse;}
@@ -389,8 +401,8 @@
 
   /* HIGHLIGHT BANNER */
   .highlight-banner {
-    background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(8,145,178,0.05));
-    border:1px solid rgba(124,58,237,0.2);
+    background:linear-gradient(135deg,rgba(165,105,255,0.08),rgba(81,117,209,0.05));
+    border:1px solid rgba(165,105,255,0.2);
     border-radius:12px;padding:12px 16px;
     font-size:13px;font-weight:600;
     color:var(--text);text-align:center;
@@ -420,12 +432,17 @@
 
 <div class="tab-bar" id="tabBar">
   <div class="tab-logo">
+    <!-- Employment Hero logo -->
     <svg viewBox="25 220 450 60" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#7C3AED" d="M108.11,259.66c3.71,0,6.15-1.79,7.42-3.79.16-.25.51-.28.7-.06l3.03,3.34c.15.16.16.42.02.58-2.19,2.58-5.95,4.66-11.36,4.66-8.24,0-12.44-5.48-12.44-12.58s4.72-12.68,12.4-12.68,11.33,4.8,11.28,13.64c0,.24-.2.44-.45.44h-16.96c-.28,0-.49.25-.44.53.67,3.91,3.35,5.93,6.8,5.93ZM101.94,249.36h10.94c.28,0,.48-.25.44-.52-.51-3.22-2.52-5-5.45-5-2.75,0-5.41,1.59-6.36,4.95-.08.28.13.57.43.57ZM215.81,264.38c-6.92,0-12.77-4.45-12.77-12.63s5.85-12.63,12.77-12.63,12.77,4.54,12.77,12.63-5.8,12.63-12.77,12.63ZM208.89,251.75c0,5.34,3.23,7.86,6.92,7.86s6.93-2.53,6.93-7.81-3.23-7.81-6.93-7.81-6.92,2.57-6.92,7.81Z"/>
-      <path fill="#7C3AED" d="M70.11,257.33c.8,0,1.55.44,1.95,1.15.38.68.37,1.49-.03,2.16l-.02.03c-2.79,4.44-7.28,7.67-12.34,8.88-1.38.33-2.35,1.58-2.35,3.05,0,1.69,1.36,3.07,3.04,3.07.24,0,.47-.03.71-.08,5.65-1.35,10.78-4.6,14.43-9.17,3.77-4.7,5.76-10.37,5.76-16.4s-1.99-11.7-5.76-16.4c-3.65-4.58-8.78-7.84-14.43-9.18-.23-.06-.47-.08-.71-.08-1.67,0-3.04,1.37-3.04,3.07,0,1.46.96,2.71,2.35,3.05,5.05,1.21,9.55,4.44,12.33,8.86l.03.06c.4.66.41,1.47.03,2.15-.4.71-1.15,1.15-1.95,1.15-.33,0-.64-.07-.95-.21-1.1-.52-2.29-.78-3.52-.78-4.4,0-8.04,3.44-8.29,7.83v.05c-.01.13-.02.23-.02.33v.2c0,.1,0,.21.02.33v.05c.25,4.39,3.9,7.84,8.29,7.84,1.23,0,2.42-.27,3.52-.78.3-.14.62-.21.95-.21"/>
-      <path fill="#7C3AED" d="M49.88,224.36c-.24,0-.47.03-.71.08-5.65,1.34-10.78,4.6-14.43,9.17-3.77,4.71-5.76,10.37-5.76,16.4s1.99,11.7,5.76,16.4c3.66,4.57,8.78,7.83,14.43,9.17.24.06.47.08.71.08,1.67,0,3.04-1.37,3.04-3.07,0-1.46-.96-2.71-2.35-3.05-5.05-1.21-9.55-4.44-12.33-8.87l-.03-.05c-.41-.68-.42-1.48-.03-2.16.4-.71,1.15-1.15,1.95-1.15.33,0,.64.07.95.21,1.1.52,2.29.78,3.52.78,4.4,0,8.04-3.44,8.29-7.83v-.05c.01-.12.02-.22.02-.33v-.2c0-.1,0-.21-.02-.33v-.05c-.25-4.39-3.9-7.84-8.29-7.84-1.23,0-2.42.27-3.52.78-.3.14-.62.21-.95.21-.8,0-1.55-.44-1.95-1.15-.38-.68-.37-1.49.03-2.16v-.02l.02-.03c2.78-4.43,7.28-7.66,12.33-8.87,1.38-.33,2.35-1.58,2.35-3.05,0-1.69-1.36-3.07-3.04-3.07"/>
-      <path fill="#7C3AED" d="M150.72,234.69c-1.56,0-3.1.18-4.58.52-.25.06-.44.28-.44.54v4.13c0,.29.29.5.57.42,1.4-.38,2.88-.59,4.41-.59,6.54,0,10.12,3.48,10.12,9.71v.73h-7.14c-7.56,0-12.08,3.37-12.08,9.01s4.2,8.51,10.12,8.51c3.46,0,6.78-1.3,9.1-4.02v3.34h6.38v-17.57c0-9.2-5.72-14.73-16.46-14.73ZM149.8,262.32c-3.15,0-5.11-1.39-5.11-3.96s1.85-4.07,6.54-4.07h5.61v2.72c-1.03,3.47-3.85,5.31-7.04,5.31ZM192.32,234.69c-3.98,0-7.42,1.64-9.51,4.56v-3.88h-6.38v28.46h6.69v-14.85c0-5.87,3-8.87,7.66-8.87s7.13,2.64,7.13,8.38v15.34h6.69v-15.99c0-8.89-4.99-13.15-12.28-13.15Z"/>
+      <path fill="#A569FF" d="M108.11,259.66c3.71,0,6.15-1.79,7.42-3.79.16-.25.51-.28.7-.06l3.03,3.34c.15.16.16.42.02.58-2.19,2.58-5.95,4.66-11.36,4.66-8.24,0-12.44-5.48-12.44-12.58s4.72-12.68,12.4-12.68,11.33,4.8,11.28,13.64c0,.24-.2.44-.45.44h-16.96c-.28,0-.49.25-.44.53.67,3.91,3.35,5.93,6.8,5.93ZM101.94,249.36h10.94c.28,0,.48-.25.44-.52-.51-3.22-2.52-5-5.45-5-2.75,0-5.41,1.59-6.36,4.95-.08.28.13.57.43.57ZM215.81,264.38c-6.92,0-12.77-4.45-12.77-12.63s5.85-12.63,12.77-12.63,12.77,4.54,12.77,12.63-5.8,12.63-12.77,12.63ZM208.89,251.75c0,5.34,3.23,7.86,6.92,7.86s6.93-2.53,6.93-7.81-3.23-7.81-6.93-7.81-6.92,2.57-6.92,7.81Z"/>
+      <path fill="#A569FF" d="M70.11,257.33c.8,0,1.55.44,1.95,1.15.38.68.37,1.49-.03,2.16l-.02.03c-2.79,4.44-7.28,7.67-12.34,8.88-1.38.33-2.35,1.58-2.35,3.05,0,1.69,1.36,3.07,3.04,3.07.24,0,.47-.03.71-.08,5.65-1.35,10.78-4.6,14.43-9.17,3.77-4.7,5.76-10.37,5.76-16.4s-1.99-11.7-5.76-16.4c-3.65-4.58-8.78-7.84-14.43-9.18-.23-.06-.47-.08-.71-.08-1.67,0-3.04,1.37-3.04,3.07,0,1.46.96,2.71,2.35,3.05,5.05,1.21,9.55,4.44,12.33,8.86l.03.06c.4.66.41,1.47.03,2.15-.4.71-1.15,1.15-1.95,1.15-.33,0-.64-.07-.95-.21-1.1-.52-2.29-.78-3.52-.78-4.4,0-8.04,3.44-8.29,7.83v.05c-.01.13-.02.23-.02.33v.2c0,.1,0,.21.02.33v.05c.25,4.39,3.9,7.84,8.29,7.84,1.23,0,2.42-.27,3.52-.78.3-.14.62-.21.95-.21"/>
+      <path fill="#A569FF" d="M49.88,224.36c-.24,0-.47.03-.71.08-5.65,1.34-10.78,4.6-14.43,9.17-3.77,4.71-5.76,10.37-5.76,16.4s1.99,11.7,5.76,16.4c3.66,4.57,8.78,7.83,14.43,9.17.24.06.47.08.71.08,1.67,0,3.04-1.37,3.04-3.07,0-1.46-.96-2.71-2.35-3.05-5.05-1.21-9.55-4.44-12.33-8.87l-.03-.05c-.41-.68-.42-1.48-.03-2.16.4-.71,1.15-1.15,1.95-1.15.33,0,.64.07.95.21,1.1.52,2.29.78,3.52.78,4.4,0,8.04-3.44,8.29-7.83v-.05c.01-.12.02-.22.02-.33v-.2c0-.1,0-.21-.02-.33v-.05c-.25-4.39-3.9-7.84-8.29-7.84-1.23,0-2.42.27-3.52.78-.3.14-.62.21-.95.21-.8,0-1.55-.44-1.95-1.15-.38-.68-.37-1.49.03-2.16v-.02l.02-.03c2.78-4.43,7.28-7.66,12.33-8.87,1.38-.33,2.35-1.58,2.35-3.05,0-1.69-1.36-3.07-3.04-3.07"/>
+      <path fill="#A569FF" d="M150.72,234.69c-1.56,0-3.1.18-4.58.52-.25.06-.44.28-.44.54v4.13c0,.29.29.5.57.42,1.4-.38,2.88-.59,4.41-.59,6.54,0,10.12,3.48,10.12,9.71v.73h-7.14c-7.56,0-12.08,3.37-12.08,9.01s4.2,8.51,10.12,8.51c3.46,0,6.78-1.3,9.1-4.02v3.34h6.38v-17.57c0-9.2-5.72-14.73-16.46-14.73ZM149.8,262.32c-3.15,0-5.11-1.39-5.11-3.96s1.85-4.07,6.54-4.07h5.61v2.72c-1.03,3.47-3.85,5.31-7.04,5.31ZM192.32,234.69c-3.98,0-7.42,1.64-9.51,4.56v-3.88h-6.38v28.46h6.69v-14.85c0-5.87,3-8.87,7.66-8.87s7.13,2.64,7.13,8.38v15.34h6.69v-15.99c0-8.89-4.99-13.15-12.28-13.15Z"/>
     </svg>
+    <!-- Co-brand separator -->
+    <span class="tab-logo-sep">×</span>
+    <!-- ShiftCare wordmark -->
+    <span class="tab-logo-sc">ShiftCare</span>
   </div>
   <div class="tab active" data-s="1" onclick="goTo(1)"><div class="tab-num">1</div>Title</div>
   <div class="tab" data-s="2" onclick="goTo(2)"><div class="tab-num">2</div>Agenda</div>
@@ -452,14 +469,14 @@
 <div class="slide active" id="s1">
   <div class="c">
     <div class="et">🏥 NDIS Provider Webinar · 2026</div>
-    <h1>Why Paying for <span>Employment Hero Payroll</span><br>Actually Saves You Money</h1>
+    <h1>From Risk to Return: <span>Why Generic Payroll Is Costing Care Providers</span> More Than They Think</h1>
     <div class="st">The five hidden costs of manual payroll — and what providers are doing instead.</div>
     <div class="badges">
       <div class="badge">💸 Labour is your <strong>biggest cost</strong></div>
       <div class="badge">⚖️ Compliance is your <strong>biggest risk</strong></div>
       <div class="badge">📊 Visibility is your <strong>biggest advantage</strong></div>
     </div>
-    <div class="ft">employmenthero.com &nbsp;·&nbsp; ShiftCare Integration Partner &nbsp;·&nbsp; $10/emp/month</div>
+    <div class="ft">Employment Hero × ShiftCare &nbsp;·&nbsp; NDIS Payroll Webinar &nbsp;·&nbsp; $10/emp/month</div>
   </div>
 </div>
 
@@ -472,7 +489,7 @@
       <div class="eyebrow">Today's Agenda</div>
       <div class="h1">Five hidden costs. <span>One hour.</span> Your numbers.</div>
       <div style="font-size:12.5px;color:var(--muted);line-height:1.6;max-width:320px;">We'll put a dollar figure on every cost your current payroll setup is carrying — and show you what's on the other side.</div>
-      <div style="padding:14px 16px;border-left:3px solid var(--purple);background:rgba(124,58,237,0.05);border-radius:0 10px 10px 0;">
+      <div style="padding:14px 16px;border-left:3px solid var(--purple);background:rgba(165,105,255,0.05);border-radius:0 10px 10px 0;">
         <div style="font-size:11px;font-weight:700;color:var(--purple);margin-bottom:4px;">BRING YOUR NUMBERS</div>
         <div style="font-size:11.5px;color:var(--muted);">Staff count · Hours on payroll per fortnight · Admin hourly rate — we'll calculate your ROI live.</div>
       </div>
@@ -493,7 +510,7 @@
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
             <span style="font-size:13px;">⏱</span>
             <div style="font-size:12.5px;font-weight:700;">Time Savings</div>
-            <div style="margin-left:auto;font-size:9.5px;font-weight:700;color:var(--purple);background:rgba(124,58,237,0.1);padding:1px 7px;border-radius:100px;">Labour Cost</div>
+            <div style="margin-left:auto;font-size:9.5px;font-weight:700;color:var(--purple);background:rgba(165,105,255,0.1);padding:1px 7px;border-radius:100px;">Labour Cost</div>
           </div>
           <div style="font-size:11px;color:var(--muted);">From 12–16 hours to 1–2 hours every fortnight. We calculate the dollar difference live.</div>
         </div>
@@ -508,7 +525,7 @@
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
             <span style="font-size:13px;">📋</span>
             <div style="font-size:12.5px;font-weight:700;">SCHADS Expertise</div>
-            <div style="margin-left:auto;font-size:9.5px;font-weight:700;color:var(--teal);background:rgba(8,145,178,0.1);padding:1px 7px;border-radius:100px;">Key-Person Risk</div>
+            <div style="margin-left:auto;font-size:9.5px;font-weight:700;color:var(--teal);background:rgba(81,117,209,0.1);padding:1px 7px;border-radius:100px;">Key-Person Risk</div>
           </div>
           <div style="font-size:11px;color:var(--muted);">The award changed twice in 2025. Who in your organisation is carrying this — and what happens if they leave?</div>
         </div>
@@ -620,7 +637,7 @@
   </div>
 
   <!-- CONNECTOR BANNER -->
-  <div style="margin-top:12px;background:linear-gradient(135deg,rgba(124,58,237,0.07),rgba(8,145,178,0.05));border:1px solid rgba(124,58,237,0.18);border-radius:12px;padding:11px 20px;display:flex;align-items:center;justify-content:center;gap:16px;">
+  <div style="margin-top:12px;background:linear-gradient(135deg,rgba(165,105,255,0.07),rgba(81,117,209,0.05));border:1px solid rgba(165,105,255,0.18);border-radius:12px;padding:11px 20px;display:flex;align-items:center;justify-content:center;gap:16px;">
     <div style="font-size:13px;font-weight:700;color:var(--text);">ShiftCare + Employment Hero is the only combination that addresses all three — together.</div>
     <div style="font-size:11px;color:var(--muted);white-space:nowrap;">Labour · Risk · Visibility</div>
   </div>
@@ -670,29 +687,29 @@
     <div style="position:relative;height:100%;display:flex;align-items:center;justify-content:center;">
       <svg viewBox="0 0 340 340" style="width:100%;max-height:280px;" xmlns="http://www.w3.org/2000/svg">
         <!-- Water line -->
-        <line x1="10" y1="118" x2="330" y2="118" stroke="rgba(8,145,178,0.25)" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <line x1="10" y1="118" x2="330" y2="118" stroke="rgba(81,117,209,0.25)" stroke-width="1.5" stroke-dasharray="6,4"/>
         <!-- "Water surface" label -->
-        <text x="16" y="113" fill="rgba(8,145,178,0.6)" font-size="9" font-family="DM Sans,sans-serif" font-weight="600" letter-spacing="1">WATER SURFACE — WHAT PROVIDERS SEE</text>
+        <text x="16" y="113" fill="rgba(81,117,209,0.6)" font-size="9" font-family="DM Sans,sans-serif" font-weight="600" letter-spacing="1">WATER SURFACE — WHAT PROVIDERS SEE</text>
         <!-- Tip above water -->
         <polygon points="170,18 220,118 120,118" fill="rgba(220,38,38,0.18)" stroke="rgba(220,38,38,0.45)" stroke-width="1.5"/>
         <!-- Visible cost label -->
         <text x="170" y="72" text-anchor="middle" fill="#DC2626" font-size="11" font-family="DM Sans,sans-serif" font-weight="700">Software</text>
         <text x="170" y="86" text-anchor="middle" fill="#DC2626" font-size="10" font-family="DM Sans,sans-serif">subscription</text>
         <!-- Body below water: larger mass -->
-        <polygon points="120,118 220,118 268,200 248,250 210,290 130,290 92,250 72,200" fill="rgba(30,11,62,0.07)" stroke="rgba(124,58,237,0.3)" stroke-width="1.5"/>
+        <polygon points="120,118 220,118 268,200 248,250 210,290 130,290 92,250 72,200" fill="rgba(45,6,73,0.07)" stroke="rgba(165,105,255,0.3)" stroke-width="1.5"/>
         <!-- Hidden cost items inside the berg -->
-        <text x="170" y="148" text-anchor="middle" fill="rgba(124,58,237,0.9)" font-size="10.5" font-family="DM Sans,sans-serif" font-weight="600">⏱ Admin labour</text>
-        <text x="170" y="168" text-anchor="middle" fill="rgba(124,58,237,0.75)" font-size="10" font-family="DM Sans,sans-serif">~$1,000–2,000/month hidden in salaries</text>
-        <line x1="80" y1="178" x2="260" y2="178" stroke="rgba(124,58,237,0.12)" stroke-width="1"/>
+        <text x="170" y="148" text-anchor="middle" fill="rgba(165,105,255,0.9)" font-size="10.5" font-family="DM Sans,sans-serif" font-weight="600">⏱ Admin labour</text>
+        <text x="170" y="168" text-anchor="middle" fill="rgba(165,105,255,0.75)" font-size="10" font-family="DM Sans,sans-serif">~$1,000–2,000/month hidden in salaries</text>
+        <line x1="80" y1="178" x2="260" y2="178" stroke="rgba(165,105,255,0.12)" stroke-width="1"/>
         <text x="170" y="196" text-anchor="middle" fill="rgba(217,119,6,0.9)" font-size="10.5" font-family="DM Sans,sans-serif" font-weight="600">📋 SCHADS expertise</text>
         <text x="170" y="212" text-anchor="middle" fill="rgba(217,119,6,0.7)" font-size="10" font-family="DM Sans,sans-serif">Key-person risk &amp; constant award changes</text>
-        <line x1="90" y1="222" x2="250" y2="222" stroke="rgba(124,58,237,0.12)" stroke-width="1"/>
+        <line x1="90" y1="222" x2="250" y2="222" stroke="rgba(165,105,255,0.12)" stroke-width="1"/>
         <text x="170" y="240" text-anchor="middle" fill="rgba(220,38,38,0.9)" font-size="10.5" font-family="DM Sans,sans-serif" font-weight="600">❌ Errors &amp; back-pay</text>
         <text x="170" y="256" text-anchor="middle" fill="rgba(220,38,38,0.7)" font-size="10" font-family="DM Sans,sans-serif">Compounding silently every fortnight</text>
-        <line x1="100" y1="264" x2="240" y2="264" stroke="rgba(124,58,237,0.12)" stroke-width="1"/>
+        <line x1="100" y1="264" x2="240" y2="264" stroke="rgba(165,105,255,0.12)" stroke-width="1"/>
         <text x="170" y="280" text-anchor="middle" fill="rgba(5,150,105,0.9)" font-size="10.5" font-family="DM Sans,sans-serif" font-weight="600">📊 Lost margin visibility</text>
         <!-- "HIDDEN" watermark -->
-        <text x="170" y="318" text-anchor="middle" fill="rgba(124,58,237,0.2)" font-size="9" font-family="DM Sans,sans-serif" font-weight="700" letter-spacing="3">HIDDEN FROM YOUR P&amp;L</text>
+        <text x="170" y="318" text-anchor="middle" fill="rgba(165,105,255,0.2)" font-size="9" font-family="DM Sans,sans-serif" font-weight="700" letter-spacing="3">HIDDEN FROM YOUR P&amp;L</text>
       </svg>
     </div>
 
@@ -842,7 +859,7 @@
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;color:var(--green);">~$874</div>
           <div style="font-size:10px;color:var(--muted);margin-top:2px;">saved per month (2 runs)</div>
         </div>
-        <div style="background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.18);border-radius:12px;padding:10px 14px;text-align:center;">
+        <div style="background:rgba(165,105,255,0.06);border:1px solid rgba(165,105,255,0.18);border-radius:12px;padding:10px 14px;text-align:center;">
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;color:var(--purple);">$10,400+</div>
           <div style="font-size:10px;color:var(--muted);margin-top:2px;">annual labour saving alone</div>
         </div>
@@ -886,7 +903,7 @@
         <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:30px;font-weight:800;color:var(--red);" id="r-cur">$1,274</div>
         <div style="font-size:10px;color:var(--muted);margin-top:3px;">per month</div>
       </div>
-      <div class="card" style="text-align:center;background:rgba(124,58,237,0.03);border-color:rgba(124,58,237,0.15);">
+      <div class="card" style="text-align:center;background:rgba(165,105,255,0.03);border-color:rgba(165,105,255,0.15);">
         <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:6px;">EH Payroll cost (<span id="r-emp2">50</span> staff)</div>
         <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:30px;font-weight:800;color:var(--purple);" id="r-eh">$500</div>
         <div style="font-size:10px;color:var(--muted);margin-top:3px;">per month</div>
@@ -913,7 +930,7 @@
     <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--r);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;padding:12px;position:relative;overflow:hidden;">
       <svg viewBox="0 0 300 260" style="width:100%;max-height:240px;" xmlns="http://www.w3.org/2000/svg">
         <!-- Spoke lines from centre -->
-        <g stroke="rgba(124,58,237,0.15)" stroke-width="1">
+        <g stroke="rgba(165,105,255,0.15)" stroke-width="1">
           <line x1="150" y1="128" x2="150" y2="22"/>
           <line x1="150" y1="128" x2="248" y2="62"/>
           <line x1="150" y1="128" x2="272" y2="168"/>
@@ -925,7 +942,7 @@
           <line x1="150" y1="128" x2="70" y2="128"/>
         </g>
         <!-- Centre node -->
-        <circle cx="150" cy="128" r="30" fill="rgba(124,58,237,0.1)" stroke="var(--purple)" stroke-width="1.5"/>
+        <circle cx="150" cy="128" r="30" fill="rgba(165,105,255,0.1)" stroke="var(--purple)" stroke-width="1.5"/>
         <text x="150" y="123" text-anchor="middle" fill="var(--purple)" font-size="10" font-family="DM Sans,sans-serif" font-weight="700">SCHADS</text>
         <text x="150" y="136" text-anchor="middle" fill="var(--purple)" font-size="9" font-family="DM Sans,sans-serif">Award</text>
         <!-- Outer nodes -->
@@ -938,7 +955,7 @@
         <text x="248" y="58" text-anchor="middle" fill="var(--gold)" font-size="8" font-family="DM Sans,sans-serif" font-weight="600">Broken</text>
         <text x="248" y="69" text-anchor="middle" fill="var(--gold)" font-size="8" font-family="DM Sans,sans-serif" font-weight="600">Shifts</text>
         <!-- Right -->
-        <circle cx="272" cy="168" r="22" fill="rgba(8,145,178,0.08)" stroke="rgba(8,145,178,0.3)" stroke-width="1.2"/>
+        <circle cx="272" cy="168" r="22" fill="rgba(81,117,209,0.08)" stroke="rgba(81,117,209,0.3)" stroke-width="1.2"/>
         <text x="272" y="164" text-anchor="middle" fill="var(--teal)" font-size="8" font-family="DM Sans,sans-serif" font-weight="600">Sleepover</text>
         <text x="272" y="175" text-anchor="middle" fill="var(--teal)" font-size="8" font-family="DM Sans,sans-serif" font-weight="600">&amp; On-Call</text>
         <!-- Bottom-right -->
@@ -954,7 +971,7 @@
         <text x="28" y="164" text-anchor="middle" fill="var(--gold)" font-size="8" font-family="DM Sans,sans-serif" font-weight="600">Casual</text>
         <text x="28" y="175" text-anchor="middle" fill="var(--gold)" font-size="8" font-family="DM Sans,sans-serif" font-weight="600">Loading</text>
         <!-- Top-left -->
-        <circle cx="52" cy="62" r="22" fill="rgba(8,145,178,0.08)" stroke="rgba(8,145,178,0.3)" stroke-width="1.2"/>
+        <circle cx="52" cy="62" r="22" fill="rgba(81,117,209,0.08)" stroke="rgba(81,117,209,0.3)" stroke-width="1.2"/>
         <text x="52" y="58" text-anchor="middle" fill="var(--teal)" font-size="7.5" font-family="DM Sans,sans-serif" font-weight="600">10-hr Rest</text>
         <text x="52" y="69" text-anchor="middle" fill="var(--teal)" font-size="7.5" font-family="DM Sans,sans-serif" font-weight="600">Breaks</text>
         <!-- Right mid -->
@@ -962,7 +979,7 @@
         <text x="230" y="124" text-anchor="middle" fill="var(--red)" font-size="7.5" font-family="DM Sans,sans-serif" font-weight="600">Rate ×2</text>
         <text x="230" y="135" text-anchor="middle" fill="var(--red)" font-size="7.5" font-family="DM Sans,sans-serif" font-weight="600">per year</text>
         <!-- Left mid -->
-        <circle cx="70" cy="128" r="20" fill="rgba(124,58,237,0.08)" stroke="rgba(124,58,237,0.25)" stroke-width="1.2"/>
+        <circle cx="70" cy="128" r="20" fill="rgba(165,105,255,0.08)" stroke="rgba(165,105,255,0.25)" stroke-width="1.2"/>
         <text x="70" y="124" text-anchor="middle" fill="var(--purple)" font-size="7.5" font-family="DM Sans,sans-serif" font-weight="600">2 Wage</text>
         <text x="70" y="135" text-anchor="middle" fill="var(--purple)" font-size="7.5" font-family="DM Sans,sans-serif" font-weight="600">Tables</text>
       </svg>
@@ -980,7 +997,7 @@
         <div class="body">Uniting Communities (65 sites, SA) — self-reported SCHADS underpayments spanning <strong>10 years</strong> and <strong>1,500 employees</strong>. Enforceable undertaking: <strong>$2.6M repaid</strong>.</div>
         <a class="news-chip red" style="margin-top:4px;" href="https://hallandwilcox.com.au/news/fair-work-ombudsman-pursues-providers-over-alleged-wage-shortfalls/" target="_blank">Hall &amp; Wilcox — Case Report</a>
       </div>
-      <div class="card" style="background:rgba(124,58,237,0.04);border-color:rgba(124,58,237,0.2);">
+      <div class="card" style="background:rgba(165,105,255,0.04);border-color:rgba(165,105,255,0.2);">
         <div style="font-size:12px;color:var(--text);line-height:1.6;"><strong>With Employment Hero:</strong> every node in that diagram is handled automatically. Rates update on schedule. Classifications are validated. You never carry this.</div>
         <a class="news-chip" style="margin-top:6px;" href="https://www.fairwork.gov.au/find-help-for/disability-support-and-aged-care-services/understanding-schads/working-in-the-schads-sector" target="_blank">Fair Work — SCHADS Overview</a>
       </div>
@@ -1124,7 +1141,7 @@
           <div style="font-size:10px;color:var(--muted);margin-top:3px;line-height:1.4;">FWO sector inquiry launched July 2025 — enforcement follows</div>
         </div>
       </div>
-      <div style="padding:14px 16px;background:linear-gradient(135deg,rgba(124,58,237,0.07),rgba(5,150,105,0.04));border:1px solid rgba(124,58,237,0.2);border-radius:12px;">
+      <div style="padding:14px 16px;background:linear-gradient(135deg,rgba(165,105,255,0.07),rgba(5,150,105,0.04));border:1px solid rgba(165,105,255,0.2);border-radius:12px;">
         <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:5px;">EH keeps you off this ladder entirely</div>
         <div style="font-size:11.5px;color:var(--muted);line-height:1.55;">Award interpretation is built in and auto-updates. Classifications are validated. Every entitlement is calculated correctly — before it ever reaches an employee's payslip.</div>
       </div>
@@ -1180,10 +1197,11 @@
 </div>
 
 <!-- S12 INTEGRATION -->
-<div class="slide" id="s12">
-  <div class="eyebrow">The ShiftCare Integration</div>
-  <div class="h1">One setup. <span>Fully automated, every fortnight.</span></div>
-  <div class="sub">You're already paying for ShiftCare. You're leaving half its value on the table without EH.</div>
+<div class="slide" id="s12" style="background:linear-gradient(180deg,var(--sc-periwinkle) 0%,var(--bg) 35%);">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(213,223,245,0.4) 0%,transparent 40%);pointer-events:none;z-index:0;border-radius:0;"></div>
+  <div class="eyebrow" style="position:relative;z-index:1;">The ShiftCare Integration</div>
+  <div class="h1" style="position:relative;z-index:1;">One setup. <span>Fully automated, every fortnight.</span></div>
+  <div class="sub" style="position:relative;z-index:1;">You're already paying for ShiftCare. You're leaving half its value on the table without EH.</div>
 
   <div style="flex:1;display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:stretch;">
 
@@ -1193,13 +1211,13 @@
       <!-- Step 1 -->
       <div style="display:flex;gap:16px;align-items:flex-start;">
         <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:44px;">
-          <div style="width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(124,58,237,0.08));border:1.5px solid rgba(124,58,237,0.3);display:flex;align-items:center;justify-content:center;font-size:20px;z-index:1;">👤</div>
-          <div style="width:2px;flex:1;min-height:20px;background:linear-gradient(180deg,rgba(124,58,237,0.3),rgba(8,145,178,0.3));margin-top:4px;"></div>
+          <div style="width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,rgba(165,105,255,0.15),rgba(165,105,255,0.08));border:1.5px solid rgba(165,105,255,0.3);display:flex;align-items:center;justify-content:center;font-size:20px;z-index:1;">👤</div>
+          <div style="width:2px;flex:1;min-height:20px;background:linear-gradient(180deg,rgba(165,105,255,0.3),rgba(81,117,209,0.3));margin-top:4px;"></div>
         </div>
         <div style="padding-bottom:20px;flex:1;">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;">
             <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;">Employee onboarded in EH</div>
-            <div style="font-size:9px;font-weight:700;color:var(--purple);background:rgba(124,58,237,0.1);padding:1px 7px;border-radius:100px;white-space:nowrap;">Step 1 · Once only</div>
+            <div style="font-size:9px;font-weight:700;color:var(--purple);background:rgba(165,105,255,0.1);padding:1px 7px;border-radius:100px;white-space:nowrap;">Step 1 · Once only</div>
           </div>
           <div style="font-size:11.5px;color:var(--muted);line-height:1.5;">Qualifications, pay rates, and SCHADS classifications set once — flows automatically to ShiftCare. No double-entry ever.</div>
           <div style="margin-top:7px;display:flex;gap:6px;flex-wrap:wrap;">
@@ -1213,13 +1231,13 @@
       <!-- Step 2 -->
       <div style="display:flex;gap:16px;align-items:flex-start;">
         <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:44px;">
-          <div style="width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,rgba(8,145,178,0.15),rgba(8,145,178,0.08));border:1.5px solid rgba(8,145,178,0.3);display:flex;align-items:center;justify-content:center;font-size:20px;z-index:1;">📅</div>
-          <div style="width:2px;flex:1;min-height:20px;background:linear-gradient(180deg,rgba(8,145,178,0.3),rgba(217,119,6,0.3));margin-top:4px;"></div>
+          <div style="width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,rgba(81,117,209,0.15),rgba(81,117,209,0.08));border:1.5px solid rgba(81,117,209,0.3);display:flex;align-items:center;justify-content:center;font-size:20px;z-index:1;">📅</div>
+          <div style="width:2px;flex:1;min-height:20px;background:linear-gradient(180deg,rgba(81,117,209,0.3),rgba(217,119,6,0.3));margin-top:4px;"></div>
         </div>
         <div style="padding-bottom:20px;flex:1;">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;">
             <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;">Shifts rostered in ShiftCare</div>
-            <div style="font-size:9px;font-weight:700;color:var(--teal);background:rgba(8,145,178,0.1);padding:1px 7px;border-radius:100px;white-space:nowrap;">Step 2 · Your team</div>
+            <div style="font-size:9px;font-weight:700;color:var(--teal);background:rgba(81,117,209,0.1);padding:1px 7px;border-radius:100px;white-space:nowrap;">Step 2 · Your team</div>
           </div>
           <div style="font-size:11.5px;color:var(--muted);line-height:1.5;">Client management, rostering, and timesheet capture — nothing changes here. Your coordinators keep working exactly as they do today.</div>
         </div>
@@ -1301,7 +1319,7 @@
       </div>
 
       <!-- Bottom callout -->
-      <div style="padding:12px 16px;background:linear-gradient(135deg,rgba(124,58,237,0.07),rgba(8,145,178,0.05));border:1px solid rgba(124,58,237,0.2);border-radius:12px;font-size:12px;font-weight:600;color:var(--text);text-align:center;">
+      <div style="padding:12px 16px;background:linear-gradient(135deg,rgba(165,105,255,0.07),rgba(81,117,209,0.05));border:1px solid rgba(165,105,255,0.2);border-radius:12px;font-size:12px;font-weight:600;color:var(--text);text-align:center;">
         ShiftCare integration is included at <span style="color:var(--purple);">$10/emp/month</span>. No add-ons. No CSV. No rework.
       </div>
     </div>
@@ -1325,7 +1343,7 @@
         <div style="font-size:11px;font-weight:700;color:var(--red);">Xero Payroll</div>
         <div style="font-size:9.5px;color:var(--muted);margin-top:1px;">Generic accounting platform</div>
       </div>
-      <div style="padding:10px 16px;background:rgba(124,58,237,0.05);text-align:center;">
+      <div style="padding:10px 16px;background:rgba(165,105,255,0.05);text-align:center;">
         <div style="font-size:11px;font-weight:700;color:var(--purple);">EH Payroll</div>
         <div style="font-size:9.5px;color:var(--muted);margin-top:1px;">Built for care sector</div>
       </div>
@@ -1394,13 +1412,13 @@
         <div style="padding:10px 16px;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--border-soft);background:rgba(217,119,6,0.03);">
           <div style="text-align:center;"><div style="font-size:10px;color:var(--gold);font-weight:700;">⚠ Bundled since Jun 2025</div><div style="font-size:9.5px;color:var(--muted);margin-top:2px;">Can't turn it off</div></div>
         </div>
-        <div style="padding:10px 16px;display:flex;align-items:center;justify-content:center;background:rgba(124,58,237,0.02);">
+        <div style="padding:10px 16px;display:flex;align-items:center;justify-content:center;background:rgba(165,105,255,0.02);">
           <div style="text-align:center;"><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:17px;font-weight:800;color:var(--purple);">$10/emp/mo</div><div style="font-size:9.5px;color:var(--muted);margin-top:2px;">Transparent. Standalone.</div></div>
         </div>
       </div>
     </div>
 
-    <div style="padding:10px 16px;background:linear-gradient(135deg,rgba(124,58,237,0.06),rgba(8,145,178,0.04));border:1px solid rgba(124,58,237,0.18);border-radius:10px;font-size:12px;font-weight:600;color:var(--text);text-align:center;">
+    <div style="padding:10px 16px;background:linear-gradient(135deg,rgba(165,105,255,0.06),rgba(81,117,209,0.04));border:1px solid rgba(165,105,255,0.18);border-radius:10px;font-size:12px;font-weight:600;color:var(--text);text-align:center;">
       You don't have to stop using Xero for accounting. You just need a payroll layer that actually understands your workforce.
     </div>
   </div>
@@ -1424,12 +1442,12 @@
         <div style="font-size:13px;font-weight:700;margin-bottom:6px;">Payroll Only — Everything included</div>
         <div style="font-size:11.5px;color:var(--muted);margin-bottom:12px;">Full SCHADS interpretation + ShiftCare native integration. 10 licence minimum.</div>
         <!-- Example calc -->
-        <div style="background:rgba(124,58,237,0.08);border-radius:10px;padding:10px 14px;">
+        <div style="background:rgba(165,105,255,0.08);border-radius:10px;padding:10px 14px;">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
             <span style="font-size:11px;color:var(--muted);">50 staff</span>
             <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:18px;font-weight:800;color:var(--purple);">$500/month</span>
           </div>
-          <div style="height:1px;background:rgba(124,58,237,0.15);margin:6px 0;"></div>
+          <div style="height:1px;background:rgba(165,105,255,0.15);margin:6px 0;"></div>
           <div style="font-size:10.5px;color:var(--purple);font-weight:600;">Less than the admin time you're already spending on payroll</div>
         </div>
       </div>
@@ -1450,7 +1468,7 @@
             <span style="font-size:11.5px;font-weight:600;">HR Elite</span>
             <span style="font-size:11px;color:var(--muted);">$18/emp/mo</span>
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 10px;background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.15);border-radius:8px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 10px;background:rgba(165,105,255,0.06);border:1px solid rgba(165,105,255,0.15);border-radius:8px;">
             <span style="font-size:11.5px;font-weight:700;color:var(--purple);">Employment OS Unlimited</span>
             <span style="font-size:11px;color:var(--purple);font-weight:700;">$50/emp/mo</span>
           </div>
@@ -1490,7 +1508,7 @@
       </div>
 
       <!-- Quick ROI math -->
-      <div style="background:linear-gradient(135deg,rgba(5,150,105,0.08),rgba(124,58,237,0.05));border:1px solid rgba(5,150,105,0.2);border-radius:var(--r);padding:14px 18px;">
+      <div style="background:linear-gradient(135deg,rgba(5,150,105,0.08),rgba(165,105,255,0.05));border:1px solid rgba(5,150,105,0.2);border-radius:var(--r);padding:14px 18px;">
         <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px;">The maths for 50 staff</div>
         <div style="display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--muted);margin-bottom:4px;"><span>Admin labour saving (est.)</span><span style="font-weight:700;color:var(--text);">$1,200/month</span></div>
         <div style="display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--muted);margin-bottom:8px;"><span>EH Payroll cost</span><span style="font-weight:700;color:var(--red);">−$500/month</span></div>
@@ -1553,7 +1571,7 @@
 
     <!-- RIGHT: With EH column -->
     <div style="display:flex;flex-direction:column;gap:0;background:var(--surface);border:2px solid var(--purple);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-lg);">
-      <div style="padding:14px 18px;background:rgba(124,58,237,0.07);border-bottom:1px solid rgba(124,58,237,0.18);">
+      <div style="padding:14px 18px;background:rgba(165,105,255,0.07);border-bottom:1px solid rgba(165,105,255,0.18);">
         <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--purple);margin-bottom:2px;">With EH Payroll</div>
         <div style="font-size:14px;font-weight:700;">EH + ShiftCare, SCHADS built in</div>
       </div>
@@ -1583,7 +1601,7 @@
           <div><div style="font-size:11px;font-weight:700;color:var(--text);">ShiftCare sync</div><div style="font-size:11px;color:var(--green);font-weight:600;">Fully automated — zero manual re-entry</div></div>
         </div>
       </div>
-      <div style="padding:12px 18px;border-top:1px solid rgba(124,58,237,0.18);text-align:center;">
+      <div style="padding:12px 18px;border-top:1px solid rgba(165,105,255,0.18);text-align:center;">
         <div style="font-size:10px;color:var(--muted);">Total monthly cost (50 staff)</div>
         <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:800;color:var(--purple);">$700/mo</div>
         <div style="font-size:10px;color:var(--muted);">$500 EH + ~$200 admin. Compliance included.</div>
@@ -1607,7 +1625,7 @@
     <div class="qa"><div class="qq">Q</div><div><div class="qn">"Our bookkeeper handles it"</div><div class="qa-a">Are they a SCHADS expert? What happens to your payroll process when they leave? One resignation = instant exposure under the new criminal regime.</div></div></div>
     <div class="qa"><div class="qq">Q</div><div><div class="qn">"We haven't had a problem yet"</div><div class="qa-a">36% of audited providers didn't know they had one either — until the FWO arrived. Uniting Communities ran SCHADS underpayments for <em>ten years</em> before self-reporting.</div></div></div>
     <div class="qa"><div class="qq">Q</div><div><div class="qn">"We don't need the reporting"</div><div class="qa-a">You don't know what you're missing until you can see your true cost per client and location. Many providers find unprofitable participants they're actively subsidising.</div></div></div>
-    <div class="qa" style="background:rgba(124,58,237,0.04);border-color:rgba(124,58,237,0.2);"><div class="qq" style="opacity:1;">✦</div><div><div class="qn" style="color:var(--purple);">Still have questions?</div><div class="qa-a">Book a free 20-minute payroll cost review — we'll run your actual numbers live with your team.</div></div></div>
+    <div class="qa" style="background:rgba(165,105,255,0.04);border-color:rgba(165,105,255,0.2);"><div class="qq" style="opacity:1;">✦</div><div><div class="qn" style="color:var(--purple);">Still have questions?</div><div class="qa-a">Book a free 20-minute payroll cost review — we'll run your actual numbers live with your team.</div></div></div>
   </div>
 </div>
 
@@ -1623,7 +1641,7 @@
       <div class="dlv"><div class="dlv-i">🔗</div>Live demo of ShiftCare → EH integration</div>
     </div>
     <button class="cta">Book your free review →</button>
-    <div style="margin-top:22px;font-size:10px;color:rgba(255,255,255,0.28);letter-spacing:0.05em;">employmenthero.com &nbsp;·&nbsp; ShiftCare Integration Partner &nbsp;·&nbsp; $10/emp/month</div>
+    <div style="margin-top:22px;font-size:10px;color:rgba(255,255,255,0.28);letter-spacing:0.05em;">Employment Hero × ShiftCare &nbsp;·&nbsp; Referral & Integration Partnership &nbsp;·&nbsp; $10/emp/month</div>
   </div>
 </div>
 
